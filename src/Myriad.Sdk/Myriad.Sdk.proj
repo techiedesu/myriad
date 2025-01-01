@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net9.0;net8.0;net6.0</TargetFrameworks>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>

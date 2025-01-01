@@ -18,5 +18,4 @@
     <ProjectReference Include="..\Myriad.Core\Myriad.Core.fsproj">
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

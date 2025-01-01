@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net9.0;net8.0;net6.0</TargetFrameworks>
     <Description>Core Myriad library used for developing plugins</Description>
     <DebugType>embedded</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -12,5 +11,7 @@
     <Compile Include="AstExtensions.fs" />
     <Compile Include="Ast.fs" />
   </ItemGroup>
-  <Import Project="..\..\.paket\Paket.Restore.targets" />
+  <ItemGroup>
+    <PackageReference Include="Fantomas.Core" />
+  </ItemGroup>
 </Project>

@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net9.0;net8.0;net6.0</TargetFrameworks>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>myriad</ToolCommandName>
     <Description>Myriad CLI tool</Description>
@@ -10,10 +9,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Program.fs" />
-    <None Include="paket.references" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ArgU" />
+    <PackageReference Include="Fantomas.Core" />
+    <PackageReference Include="Tomlyn" />
+    <PackageReference Include="McMaster.NETCore.Plugins" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Myriad.Core\Myriad.Core.fsproj" />
   </ItemGroup>
-  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

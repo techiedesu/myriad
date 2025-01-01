@@ -2,12 +2,6 @@
   "version": 1,
   "isRoot": true,
   "tools": {
-    "paket": {
-      "version": "9.0.2",
-      "commands": [
-        "paket"
-      ]
-    },
     "dotnet-mergenupkg": {
       "version": "3.0.0",
       "commands": [

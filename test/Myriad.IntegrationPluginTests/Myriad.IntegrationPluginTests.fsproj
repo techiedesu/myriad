@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net9.0;net8.0;net6.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <IsPackable>false</IsPackable>
     <RollForward>major</RollForward>
@@ -61,7 +60,10 @@
     <ProjectReference Include="../../src/Myriad.Plugins/Myriad.Plugins.fsproj" PrivateAssets="All" />
     <ProjectReference Include="../Myriad.Plugins.Example1/Myriad.Plugins.Example1.fsproj" PrivateAssets="All" />
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Expecto" />
+    <PackageReference Include="Aether" />
+  </ItemGroup>
   <!-- use the dll directly rather than using a nuget -->
   <PropertyGroup>
     <MyriadSdk_Generator_ExeHost>dotnet </MyriadSdk_Generator_ExeHost>
@@ -73,6 +75,4 @@
   <Import Project="..\..\src\Myriad.Plugins\build\Myriad.Plugins.InTest.props" />
   <!-- include example1 plugin -->
   <Import Project="..\Myriad.Plugins.Example1\build\Myriad.Plugins.Example1.InTest.props" />
-  <!-- paket -->
-  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
