@@ -145,7 +145,7 @@ The full fsproj is detail below:
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net6.0</TargetFrameworks>
+        <TargetFrameworks>net9.0</TargetFrameworks>
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Library.fs" />

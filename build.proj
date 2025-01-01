@@ -5,9 +5,9 @@
     <RemoveDir Directories="$(NupkgsDir)" />
   </Target>
 
-<!--  <Target Name="Restore">-->
+  <Target Name="Restore">
 <!--    <Exec Command="dotnet restore" ConsoleToMSBuild="true" />-->
-<!--  </Target>-->
+  </Target>
 
   <Target Name="Build" DependsOnTargets="Restore">
     <Exec Command='dotnet build src/Myriad/Myriad.fsproj -c $(Configuration)' />
