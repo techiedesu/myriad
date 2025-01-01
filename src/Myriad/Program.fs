@@ -84,7 +84,7 @@ module Main =
                 | ConfigKey _ -> "Specify a key in the config that will be passed to the generator."
                 | ContextFile _ -> "Specify a context file for the generator to use."
                 | Plugin _ -> "Register an assembly plugin."
-                | WaitForDebugger _ -> "Wait for the debugger to attach."
+                | WaitForDebugger -> "Wait for the debugger to attach."
                 | Verbose -> "Verbose output."
                 | AdditionalParams _ -> "Specify additional parameters."
                 | InlineGeneration -> "Generate code for the input file at the end of the input file."
