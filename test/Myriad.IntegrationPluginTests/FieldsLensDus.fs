@@ -113,7 +113,7 @@ module SingleCaseDULenses =
             match x with
             | Single x -> x
 
-        getter, (fun (_: SingleCaseDU) (value: int) -> Single value)
+        getter, fun (_: SingleCaseDU) (value: int) -> Single value
 namespace rec TestLens
 
 module WrappedSingleCaseDULenses =
@@ -125,7 +125,7 @@ module WrappedSingleCaseDULenses =
                 match x with
                 | SingleWrapped x -> x
 
-            getter, (fun (_: WrappedSingleCaseDU) (value: int) -> SingleWrapped value)
+            getter, fun (_: WrappedSingleCaseDU) (value: int) -> SingleWrapped value
         )
 namespace rec TestLens
 
