@@ -244,14 +244,14 @@ About to format generated ouptut from %A{genType}"""
             0 // return an integer exit code
 
         with
+        | :? ArguParseException as ae when ae.ErrorCode = ErrorCode.HelpText ->
+            printfn $"%s{ae.Message}"
+            3
         | :? ArguParseException as ae ->
             printfn $"%s{ae.Message}"
             match ae.ErrorCode with
             | ErrorCode.HelpText -> 0
             | _ -> 2
-        | :? ArguParseException as ae when ae.ErrorCode = ErrorCode.HelpText ->
-            printfn $"%s{ae.Message}"
-            3
         | :? FileNotFoundException as fnf ->
             printfn $"ERROR: inputfile %s{fnf.FileName} doesn not exist\n%s{parser.PrintUsage()}"
             4
