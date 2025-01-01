@@ -137,7 +137,7 @@ module FullyQualifiedDULenses =
             match x with
             | FullyQualifiedDU.FullyQualified x -> x
 
-        getter, (fun (_: FullyQualifiedDU) (value: string) -> FullyQualifiedDU.FullyQualified value)
+        getter, fun (_: FullyQualifiedDU) (value: string) -> FullyQualifiedDU.FullyQualified value
 namespace rec TestLens
 
 module Module_SingleCaseDULenses =
@@ -148,7 +148,7 @@ module Module_SingleCaseDULenses =
             match x with
             | Single x -> x
 
-        getter, (fun (_: Module_SingleCaseDU) (value: int) -> Single value)
+        getter, fun (_: Module_SingleCaseDU) (value: int) -> Single value
 namespace rec TestLens
 
 module Module_WrappedSingleCaseDULenses =
@@ -160,7 +160,7 @@ module Module_WrappedSingleCaseDULenses =
                 match x with
                 | SingleWrapped x -> x
 
-            getter, (fun (_: Module_WrappedSingleCaseDU) (value: int) -> SingleWrapped value)
+            getter, fun (_: Module_WrappedSingleCaseDU) (value: int) -> SingleWrapped value
         )
 namespace rec TestLens
 
@@ -172,7 +172,7 @@ module Module_FullyQualifiedDULenses =
             match x with
             | Module_FullyQualifiedDU.FullyQualifiedCase x -> x
 
-        getter, (fun (_: Module_FullyQualifiedDU) (value: int) -> Module_FullyQualifiedDU.FullyQualifiedCase value)
+        getter, fun (_: Module_FullyQualifiedDU) (value: int) -> Module_FullyQualifiedDU.FullyQualifiedCase value
 
 namespace rec TestFields
 
