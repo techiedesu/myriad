@@ -5,7 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-
+## Changed
+- Upgraded to net9.0
+  - Updated Nuget packages
+    Fantomas.Core to 7.0.0
+    - FSharp.Core 9.0.101
+    - Argu 6.2.5
+    - FSharp.Compiler.Service 43.9.101
+    - Tomlyn 0.18.0
+    - Expecto 10.2.1
+    - Aether 8.3.1
+    - McMaster.NETCore.Plugins 2.0.0
 ## [0.8.3]
 ## Fixed
 Nuget package now has correct link to changelog
