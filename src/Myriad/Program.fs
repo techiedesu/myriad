@@ -1,6 +1,5 @@
 ﻿namespace Myriad
 open System
-open Fantomas
 open System.IO
 open Fantomas.FCS.Syntax
 open Argu
@@ -67,7 +66,7 @@ module Main =
         | OutputFile of string
         | ConfigFile of string
         | ConfigKey of string
-        | [<HiddenAttribute>] ContextFile of string
+        | [<Hidden>] ContextFile of string
         | Plugin of string
         | [<CustomCommandLine("--wait-for-debugger")>] WaitForDebugger
         | Verbose
@@ -84,7 +83,7 @@ module Main =
                 | ConfigKey _ -> "Specify a key in the config that will be passed to the generator."
                 | ContextFile _ -> "Specify a context file for the generator to use."
                 | Plugin _ -> "Register an assembly plugin."
-                | WaitForDebugger _ -> "Wait for the debugger to attach."
+                | WaitForDebugger -> "Wait for the debugger to attach."
                 | Verbose -> "Verbose output."
                 | AdditionalParams _ -> "Specify additional parameters."
                 | InlineGeneration -> "Generate code for the input file at the end of the input file."
@@ -244,14 +243,14 @@ About to format generated ouptut from %A{genType}"""
             0 // return an integer exit code
 
         with
+        | :? ArguParseException as ae when ae.ErrorCode = ErrorCode.HelpText ->
+            printfn $"%s{ae.Message}"
+            3
         | :? ArguParseException as ae ->
             printfn $"%s{ae.Message}"
             match ae.ErrorCode with
             | ErrorCode.HelpText -> 0
             | _ -> 2
-        | :? ArguParseException as ae when ae.ErrorCode = ErrorCode.HelpText ->
-            printfn $"%s{ae.Message}"
-            3
         | :? FileNotFoundException as fnf ->
             printfn $"ERROR: inputfile %s{fnf.FileName} doesn not exist\n%s{parser.PrintUsage()}"
             4
